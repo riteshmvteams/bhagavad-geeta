@@ -10,3 +10,15 @@ export interface Chapter {
   chapter_summary: string;
   chapter_summary_hindi: string;
 }
+
+export interface Verse {
+  id: number;
+  verse_number: number;
+  chapter_number: number;
+  slug: string;
+  text: string;
+  transliteration: string;
+  word_meanings: string;
+  translations: any;
+  commentaries: any;
+}

@@ -39,14 +39,16 @@ export default async function Home() {
       <section className="py-10">
         <div className="container">
           <h2 className="text-text text-3xl">Chapters:</h2>
-          <ul className="grid grid-cols-2 gap-4">
+          <ul className="grid grid-cols-2 gap-6 mt-4">
             {allChapters?.map((chapter: Chapter) => (
               <li
                 key={chapter.id}
-                className="border-2 border-transparent hover:border-accent rounded-md"
+                className="border-2 border-secondaryText/10 hover:border-accent rounded-md shadow-2xl"
               >
-                <Link href={"/"} className="p-4 block">
-                  {chapter.name_translated}
+                <Link href={`/${chapter?.slug}`} className="p-4 block">
+                  <h4 className="text-accent font-bold text-xl">
+                    {chapter?.name_translated}
+                  </h4>
                 </Link>
               </li>
             ))}
