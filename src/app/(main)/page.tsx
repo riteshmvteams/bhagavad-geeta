@@ -45,19 +45,19 @@ export default async function Home() {
             {allChapters?.map((chapter: Chapter) => (
               <li
                 key={chapter.id}
-                className="border-2 border-secondaryText/20 hover:border-accent rounded-md shadow-2xl"
+                className="bg-secondaryBg border-4 border-secondaryBg rounded-lg overflow-hidden relative after:content-[''] after:absolute after:w-20 after:h-20 after:bottom-[-80px] after:left-[-80px] after:bg-primaryBg hover:after:scale-[20] after:rounded-full after:transition-all after:duration-500 after:z-[-1] z-[1]"
               >
                 <Link href={`/${chapter?.slug}`} className="p-4 block">
-                  <h4 className="text-accent font-bold text-xl">
+                  <h4 className="font-bold text-xl text-accent">
                     {chapter?.id}. {chapter?.name_translated}
                   </h4>
 
-                  <p className="mt-2 text-base text-secondaryText tracking-wide">
+                  <p className="mt-2 text-base tracking-wide text-primaryText/80">
                     {truncateText(chapter?.chapter_summary, 220)}
                   </p>
 
-                  <div className="mt-4 text-text flex items-center gap-2">
-                    <span className="px-1 py-0.5 rounded-md border border-primaryText">
+                  <div className="mt-4 flex items-center gap-1">
+                    <span className="px-1 py-0.5 rounded-md">
                       <List />
                     </span>
                     <span>{chapter?.verses_count}</span>

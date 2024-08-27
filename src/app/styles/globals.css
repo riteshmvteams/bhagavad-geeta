@@ -4,18 +4,15 @@
 
 :root {
   --primary-bg: 255 255 255;
-  --primary-text: 130 36 2;
-  --text: 0 0 0;
+  --primary-text: 0 0 0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-bg: 11 16 31;
-    --primary-text: 225 224 252;
-    --secondary-bg: 16 27 46;
-    --secondary-text: 183 181 223;
-    --accent: 147 145 204;
-    --text: 255 255 255;
+    --primary-bg: 26 26 26;
+    --primary-text: 255 255 255;
+    --secondary-bg: 37 37 37;
+    --accent: 166 136 250;
   }
 }
 
