@@ -7,11 +7,28 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "1rem",
+        sm: "2rem",
+        lg: "4rem",
+      },
+      screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+      },
+    },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        primaryBg: "rgb(var(--primary-bg))",
+        primaryText: "rgb(var(--primary-text))",
+        secondaryBg: "rgb(var(--secondary-bg))",
+        secondaryText: "rgb(var(--secondary-text))",
+        accent: "rgb(var(--accent))",
+        text: "rgb(var(--text))",
       },
     },
   },
