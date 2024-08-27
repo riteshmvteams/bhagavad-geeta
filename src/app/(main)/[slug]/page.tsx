@@ -1,5 +1,5 @@
 import { env } from "@/app/config/env";
-import { Chapter, Verse } from "@/types";
+import { Verse } from "@/types";
 import { extractChapterNumber } from "@/utils/helpers";
 import Link from "next/link";
 import React from "react";
@@ -75,7 +75,7 @@ export default async function ChapterDetail({ params }: Props) {
             return (
               <li key={verse.id}>
                 <Link
-                  href={`/verses?chapter=${chapNumber}&verse=${verse.verse_number}`}
+                  href={`/verses?chapter=${chapNumber}&verse=${verse.verse_number}&max=${chapterDetails.verses_count}`}
                 >
                   {verse.slug}
                 </Link>

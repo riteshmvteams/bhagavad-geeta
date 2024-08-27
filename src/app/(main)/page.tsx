@@ -1,5 +1,7 @@
 import { env } from "@/app/config/env";
 import { Chapter } from "@/types";
+import { truncateText } from "@/utils/helpers";
+import { List } from "lucide-react";
 import Link from "next/link";
 
 const getChapters = async () => {
@@ -43,12 +45,23 @@ export default async function Home() {
             {allChapters?.map((chapter: Chapter) => (
               <li
                 key={chapter.id}
-                className="border-2 border-secondaryText/10 hover:border-accent rounded-md shadow-2xl"
+                className="border-2 border-secondaryText/20 hover:border-accent rounded-md shadow-2xl"
               >
                 <Link href={`/${chapter?.slug}`} className="p-4 block">
                   <h4 className="text-accent font-bold text-xl">
-                    {chapter?.name_translated}
+                    {chapter?.id}. {chapter?.name_translated}
                   </h4>
+
+                  <p className="mt-2 text-base text-secondaryText tracking-wide">
+                    {truncateText(chapter?.chapter_summary, 220)}
+                  </p>
+
+                  <div className="mt-4 text-text flex items-center gap-2">
+                    <span className="px-1 py-0.5 rounded-md border border-primaryText">
+                      <List />
+                    </span>
+                    <span>{chapter?.verses_count}</span>
+                  </div>
                 </Link>
               </li>
             ))}
