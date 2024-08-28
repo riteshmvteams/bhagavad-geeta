@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "@/app/styles/globals.css";
 import { inter, lexend } from "@/app/font";
 import { siteConfig } from "@/app/config/site";
+import { cn } from "@/utils/helpers";
 
 export const metadata: Metadata = {
   title: siteConfig.title,
@@ -17,7 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`bg-primaryBg text-primaryText ${inter.variable} ${lexend.variable} font-inter`}
+        className={cn(
+          "bg-primaryBg text-primaryText font-inter",
+          inter.variable,
+          lexend.variable
+        )}
       >
         {children}
       </body>

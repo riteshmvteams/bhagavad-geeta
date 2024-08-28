@@ -30,10 +30,7 @@ async function ListChapters() {
   return (
     <ul className="grid grid-cols-2 gap-6 mt-4">
       {allChapters?.map((chapter: Chapter) => (
-        <li
-          key={chapter.id}
-          className="bg-secondaryBg border-4 border-secondaryBg rounded-lg overflow-hidden relative after:content-[''] after:absolute after:w-20 after:h-20 after:bottom-[-80px] after:left-[-80px] after:bg-primaryBg hover:after:scale-[20] after:rounded-full after:transition-all after:duration-500 after:z-[-1] z-[1]"
-        >
+        <li key={chapter.id} className="card">
           <Link href={`/${chapter?.slug}`} className="p-4 block">
             <h4 className="font-bold text-xl text-accent font-lexend tracking-wider">
               {chapter?.id}. {chapter?.name_translated}

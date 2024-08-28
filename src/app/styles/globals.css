@@ -12,7 +12,8 @@
     --primary-bg: 26 26 26;
     --primary-text: 255 255 255;
     --secondary-bg: 37 37 37;
-    --accent: 166 136 250;
+    /* --accent: 166 136 250; */
+    --accent: 0 189 126;
   }
 }
 
@@ -20,4 +21,14 @@
   .text-balance {
     text-wrap: balance;
   }
+}
+
+html,
+body {
+  scrollbar-width: thin;
+  /* scrollbar-color: rgb(var(--accent)) rgb(var(--secondary-bg)); */
+}
+
+.card {
+  @apply bg-secondaryBg border-4 border-secondaryBg rounded-lg overflow-hidden relative after:content-[''] after:absolute after:w-20 after:h-20 after:bottom-[-80px] after:left-[-80px] after:bg-primaryBg hover:after:scale-[20] after:rounded-full after:transition-all after:duration-500 after:z-[-1] z-[1];
 }

@@ -21,14 +21,15 @@ export default async function ChapterDetail({ params }: Props) {
   return (
     <main>
       <section className="container ">
-        <ul className="grid grid-cols-2 gap-5">
+        <ul className="grid grid-cols-1 gap-5 p-10">
           {verses.map((verse: Verse) => {
             return (
-              <li key={verse.id}>
+              <li key={verse.id} className="card">
                 <Link
                   href={`/verses?chapter=${chapNumber}&verse=${verse.verse_number}&max=${chapterDetails.verses_count}`}
+                  className="p-4 block"
                 >
-                  {verse.slug}
+                  {verse?.slug}
                 </Link>
               </li>
             );
