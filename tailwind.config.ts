@@ -22,6 +22,10 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        inter: ["var(--font-inter)"],
+        lexend: ["var(--font-lexend)"],
+      },
       colors: {
         primaryBg: "rgb(var(--primary-bg))",
         primaryText: "rgb(var(--primary-text))",

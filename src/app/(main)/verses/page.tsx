@@ -1,5 +1,6 @@
-import { env } from "@/app/config/env";
 import Link from "next/link";
+
+import { getSingleVerse } from "@/http/api";
 
 type Props = {
   searchParams: {
@@ -7,31 +8,6 @@ type Props = {
     verse: string;
     max: string;
   };
-};
-
-const getSingleVerse = async (chapterNumber: number, verseNumber: number) => {
-  try {
-    const res = await fetch(
-      `https://bhagavad-gita3.p.rapidapi.com/v2/chapters/${chapterNumber}/verses/${verseNumber}/`,
-      {
-        method: "GET",
-        headers: {
-          "x-rapidapi-key": env.RAPID_API_KEY as string,
-          "x-rapidapi-host": env.RAPID_API_HOST as string,
-        },
-      }
-    );
-
-    if (!res.ok) {
-      return null;
-    }
-
-    const data = await res.json();
-    return data;
-  } catch (error) {
-    console.log("Error while fethcing verses ...", error);
-    throw error;
-  }
 };
 
 export default async function VersePage({ searchParams }: Props) {
