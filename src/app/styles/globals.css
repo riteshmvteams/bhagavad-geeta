@@ -17,16 +17,9 @@
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-html,
-body {
+html {
   scrollbar-width: thin;
-  /* scrollbar-color: rgb(var(--accent)) rgb(var(--secondary-bg)); */
+  scrollbar-color: rgb(var(--accent)) rgb(var(--secondary-bg));
 }
 
 .card {

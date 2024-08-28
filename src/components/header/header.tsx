@@ -1,6 +1,7 @@
-import { Settings } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+
+import ThemeSettings from "./theme-settings";
 
 export default function Header() {
   return (
@@ -14,9 +15,7 @@ export default function Header() {
             .
           </Link>
           <div>
-            <button className="p-2 rounded-md hover:bg-primaryBg duration-300 group active:scale-95">
-              <Settings className="group-hover:rotate-90 duration-300" />
-            </button>
+            <ThemeSettings />
           </div>
         </div>
       </div>

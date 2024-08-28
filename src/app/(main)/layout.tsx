@@ -1,5 +1,7 @@
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import DrawerProvider from "@/components/providers/drawer-provider";
+import Drawer from "@/components/ui/drawer";
 
 export default function MainAppLayout({
   children,
@@ -7,10 +9,13 @@ export default function MainAppLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      {children}
-      <Footer />
-    </div>
+    <DrawerProvider>
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        {children}
+        <Footer />
+      </div>
+      <Drawer />
+    </DrawerProvider>
   );
 }
