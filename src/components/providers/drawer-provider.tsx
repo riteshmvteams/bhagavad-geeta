@@ -31,7 +31,7 @@ const drawerContext = createContext<DrawerContext | null>(null);
 const DrawerProvider = ({ children }: { children: React.ReactNode }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [Comp, setComp] = useState<React.ReactNode | null>(null);
-  const [direction, setDirection] = useState<Direction>(Direction.BOTTOM);
+  const [direction, setDirection] = useState<Direction>(Direction.LEFT);
   const [width, setWidth] = useState(500);
 
   const openDrawer = ({

@@ -15,7 +15,6 @@ export default function MainAppLayout({
         {children}
         <Footer />
       </div>
-      <Drawer />
     </DrawerProvider>
   );
 }
