@@ -6,13 +6,17 @@ import { getChapters } from "@/http/api";
 import { Chapter } from "@/types";
 import { truncateText } from "@/utils/helpers";
 import ChapterLoading from "@/components/loaders/ChapterLoading";
+import { env } from "../config/env";
+const lang = env.DEFAULT_LANGUAGE;
 
 export default async function Home() {
   return (
     <main>
       <section className="py-10">
         <div className="container">
-          <h2 className="text-text text-3xl font-bold">Chapters:</h2>
+          <h2 className="text-text text-3xl font-bold">
+            {lang === "hi" ? "अध्याय:" : "Chapters:"}
+          </h2>
           <Suspense fallback={<ChapterLoading />}>
             <ListChapters />
           </Suspense>
@@ -34,11 +38,17 @@ async function ListChapters() {
         <li key={chapter.id} className="card">
           <Link href={`/${chapter?.slug}`} className="p-4 block">
             <h4 className="font-bold text-xl text-accent font-lexend tracking-wider">
-              {chapter?.id}. {chapter?.name_translated}
+              {chapter?.id}.{" "}
+              {lang === "hi" ? chapter?.name : chapter?.name_translated}
             </h4>
 
             <p className="mt-2 text-base tracking-wide text-primaryText/80">
-              {truncateText(chapter?.chapter_summary, 220)}
+              {truncateText(
+                lang === "hi"
+                  ? chapter?.chapter_summary_hindi
+                  : chapter?.chapter_summary,
+                220
+              )}
             </p>
 
             <div className="mt-4 flex items-center gap-1">
