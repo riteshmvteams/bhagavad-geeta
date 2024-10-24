@@ -22,7 +22,7 @@ export default async function VersePage({ searchParams }: Props) {
   }
 
   return (
-    <main className="p-10">
+    <main className="py-10">
       <section className="container">
         <h2 className="font-lexend text-xl font-medium text-accent text-center mb-8">
           Chapter No: {verse.chapter_number} - Verse No: {verse.verse_number}
