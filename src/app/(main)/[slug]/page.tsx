@@ -4,6 +4,7 @@ import React, { Suspense } from "react";
 import { getAllVerses, getChapterDetail } from "@/http/api";
 import { Chapter, Verse } from "@/types";
 import { extractChapterNumber } from "@/utils/helpers";
+import SingleChapterLoad from "@/components/loaders/SingleChapterLoad";
 
 type Props = {
   params: {
@@ -17,7 +18,7 @@ export default async function ChapterDetail({ params }: Props) {
   return (
     <main>
       <section className="container">
-        <Suspense fallback={"Loading..."}>
+        <Suspense fallback={<SingleChapterLoad />}>
           <ListVerses chapNumber={chapNumber} />
         </Suspense>
       </section>
