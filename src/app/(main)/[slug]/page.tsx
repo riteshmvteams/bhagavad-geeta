@@ -50,7 +50,7 @@ const ListVerses = async ({ chapNumber }: { chapNumber: number }) => {
           {chapterDetails?.chapter_summary}
         </p>
       </div>
-      <ul className="grid grid-cols-1 gap-5 p-10">
+      <ul className="grid grid-cols-1 gap-5 md:px-10 py-10">
         {verses.map((verse: Verse) => {
           const translations = verse?.translations?.filter(
             (t: any) => t.language.toLowerCase() === "english"
