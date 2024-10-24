@@ -5,6 +5,7 @@ import { List } from "lucide-react";
 import { getChapters } from "@/http/api";
 import { Chapter } from "@/types";
 import { truncateText } from "@/utils/helpers";
+import ChapterLoading from "@/components/loaders/ChapterLoading";
 
 export default async function Home() {
   return (
@@ -12,7 +13,7 @@ export default async function Home() {
       <section className="py-10">
         <div className="container">
           <h2 className="text-text text-3xl font-bold">Chapters:</h2>
-          <Suspense fallback={"Loading..."}>
+          <Suspense fallback={<ChapterLoading />}>
             <ListChapters />
           </Suspense>
         </div>
@@ -28,7 +29,7 @@ async function ListChapters() {
     return <div>Error...</div>;
   }
   return (
-    <ul className="grid grid-cols-2 gap-6 mt-4">
+    <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
       {allChapters?.map((chapter: Chapter) => (
         <li key={chapter.id} className="card">
           <Link href={`/${chapter?.slug}`} className="p-4 block">
