@@ -39,14 +39,14 @@ const ListVerses = async ({ chapNumber }: { chapNumber: number }) => {
   return (
     <>
       <div className="my-10 flex flex-col gap-5">
-        <h2 className="text-center text-accent text-xl font-semibold">
+        <h2 className="text-center text-accent text-lg sm:text-xl font-semibold">
           Chapter {chapNumber}
         </h2>
-        <h1 className="text-center font-bold text-3xl font-lexend">
+        <h1 className="text-center font-bold text-2xl sm:text-3xl font-lexend">
           {chapterDetails?.name_translated}
         </h1>
 
-        <p className="text-left text-lg text-primaryText/80">
+        <p className="text-left text-base sm:text-lg text-primaryText/80">
           {chapterDetails?.chapter_summary}
         </p>
       </div>
@@ -65,7 +65,7 @@ const ListVerses = async ({ chapNumber }: { chapNumber: number }) => {
                   Verse {verse?.verse_number}:
                 </h4>
 
-                <p className="mt-2 text-base tracking-wide text-primaryText/80">
+                <p className="mt-2 text-sm sm:text-base tracking-wide text-primaryText/80">
                   {translations[0]?.description}
                 </p>
               </Link>

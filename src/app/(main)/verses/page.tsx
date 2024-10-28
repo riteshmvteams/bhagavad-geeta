@@ -24,29 +24,33 @@ export default async function VersePage({ searchParams }: Props) {
   return (
     <main className="py-10">
       <section className="container">
-        <h2 className="font-lexend text-xl font-medium text-accent text-center mb-8">
+        <h2 className="font-lexend text-lg sm:text-xl font-medium text-accent text-center mb-8">
           Chapter No: {verse.chapter_number} - Verse No: {verse.verse_number}
         </h2>
         <div className="flex flex-col gap-3 items-center mb-10">
-          <div className="text-lg font-lexend">{verse?.text}</div>
-          <div className="text-lg font-lexend">{verse?.transliteration}</div>
+          <div className="text-base sm:text-lg font-lexend">{verse?.text}</div>
+          <div className="text-base sm:text-lg font-lexend">
+            {verse?.transliteration}
+          </div>
         </div>
 
         <ul className="flex flex-col gap-4 pb-4">
-          <h2 className="font-bold text-3xl font-lexend -mb-3">Translation:</h2>
+          <h2 className="font-bold text-2xl sm:text-3xl font-lexend -mb-3">
+            Translation:
+          </h2>
           {verse?.translations?.map((trans: any, ind: number) => {
             return (
               <li
                 key={trans.id}
                 className="card !p-2.5 hover:ring-1 hover:ring-accent flex flex-col gap-5 cursor-pointer"
               >
-                <div>
-                  <span className="font-lexend text-base text-accent font-bold">
+                <div className="text-sm sm:text-base">
+                  <span className="font-lexend text-sm sm:text-base text-accent font-bold">
                     {ind + 1}.
                   </span>{" "}
                   {trans?.description}
                 </div>
-                <div className="flex justify-end text-accent font-lexend text-sm">
+                <div className="flex justify-end text-accent font-lexend text-[13px] sm:text-sm">
                   {trans?.author_name}
                   {"  "}|
                   <span className="ml-1.5 capitalize">{trans?.language}</span>
@@ -57,7 +61,7 @@ export default async function VersePage({ searchParams }: Props) {
         </ul>
 
         <ul className="flex flex-col gap-4 border-t border-t-accent pt-4">
-          <h2 className="font-bold text-3xl font-lexend -mb-3">
+          <h2 className="font-bold text-2xl sm:text-3xl font-lexend -mb-3">
             Commentories:
           </h2>
           {verse?.commentaries?.map((comments: any, ind: number) => {
@@ -66,13 +70,13 @@ export default async function VersePage({ searchParams }: Props) {
                 key={comments.id}
                 className="card !p-2.5 hover:ring-1 hover:ring-accent flex flex-col gap-5 cursor-pointer"
               >
-                <div>
-                  <span className="font-lexend text-base text-accent font-bold">
+                <div className="text-sm sm:text-base">
+                  <span className="font-lexend text-accent font-bold">
                     {ind + 1}.
                   </span>{" "}
                   {comments?.description}
                 </div>
-                <div className="flex justify-end text-accent font-lexend text-sm">
+                <div className="flex justify-end text-accent font-lexend text-[13px] sm:text-sm">
                   {comments?.author_name}
                   {"  "}|
                   <span className="ml-1.5 capitalize">
