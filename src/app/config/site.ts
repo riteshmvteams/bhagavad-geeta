@@ -1,4 +1,4 @@
 export const siteConfig = {
-  title: "App",
-  description: "App Description",
+  title: "Bhagavad Gita",
+  description: "Bhagavad Gita - The ultimate resource for Bhagavad Gita.",
 };
