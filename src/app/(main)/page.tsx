@@ -14,7 +14,7 @@ export default async function Home() {
     <main>
       <section className="py-10">
         <div className="container">
-          <h2 className="text-text text-3xl font-bold">
+          <h2 className="text-text text-2xl sm:text-3xl font-bold">
             {lang === "hi" ? "अध्याय:" : "Chapters:"}
           </h2>
           <Suspense fallback={<ChapterLoading />}>
@@ -37,12 +37,12 @@ async function ListChapters() {
       {allChapters?.map((chapter: Chapter) => (
         <li key={chapter.id} className="card">
           <Link href={`/${chapter?.slug}`} className="p-4 block">
-            <h4 className="font-bold text-xl text-accent font-lexend tracking-wider">
+            <h4 className="font-bold text-lg sm:text-xl text-accent font-lexend tracking-wider">
               {chapter?.id}.{" "}
               {lang === "hi" ? chapter?.name : chapter?.name_translated}
             </h4>
 
-            <p className="mt-2 text-base tracking-wide text-primaryText/80">
+            <p className="mt-2 text-sm sm:text-base tracking-wide text-primaryText/80">
               {truncateText(
                 lang === "hi"
                   ? chapter?.chapter_summary_hindi
@@ -55,7 +55,9 @@ async function ListChapters() {
               <span className="px-1 py-0.5 rounded-md">
                 <List />
               </span>
-              <span>{chapter?.verses_count}</span>
+              <span className="text-sm sm:text-base">
+                {chapter?.verses_count}
+              </span>
             </div>
           </Link>
         </li>
